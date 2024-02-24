@@ -6,11 +6,13 @@ import com.xinduswishlistmanagement.Exception.WishlistException;
 import com.xinduswishlistmanagement.Model.Wishlist;
 
 public interface WishlistService {
-	
-	public Wishlist addProductToWishlist(Integer ProductId) throws WishlistException,UserException,ProductException;
-	
-	public Wishlist deleteProductFromWishlist(Integer ProductId) throws WishlistException,UserException,ProductException;
-	
-	public Wishlist getLoggedInUserWishlist() throws WishlistException,UserException,ProductException; 
 
+	// Add a product to the wishlist
+	public Wishlist addProductToWishlist(Integer productId) throws WishlistException, UserException, ProductException;
+
+	// Delete a product from the wishlist
+	public Wishlist deleteProductFromWishlist(Integer productId) throws WishlistException, UserException, ProductException;
+
+	// Get the wishlist of the logged-in user
+	public Wishlist getLoggedInUserWishlist() throws WishlistException, UserException, ProductException;
 }

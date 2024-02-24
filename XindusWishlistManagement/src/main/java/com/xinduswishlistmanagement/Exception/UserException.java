@@ -1,13 +1,15 @@
 package com.xinduswishlistmanagement.Exception;
 
-public class UserException extends Exception{
-	
+// Custom exception class for handling errors related to users
+public class UserException extends Exception {
+
+	// Default constructor
 	public UserException() {
-		// TODO Auto-generated constructor stub
+
 	}
-	
+
+	// Constructor with a message parameter
 	public UserException(String message) {
-		// TODO Auto-generated constructor stub
 		super(message);
 	}
 

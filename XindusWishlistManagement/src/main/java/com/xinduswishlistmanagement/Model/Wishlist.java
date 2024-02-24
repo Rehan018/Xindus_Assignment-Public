@@ -13,17 +13,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+// Entity class representing wishlists
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class Wishlist {
-	
+
+	// Unique identifier for the wishlist
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer wishlistId;
-	
+
+	// One-to-many mapping with products in the wishlist
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Product> listOfProducts = new ArrayList<>();
-
 }

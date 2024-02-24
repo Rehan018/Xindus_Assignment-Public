@@ -9,15 +9,18 @@ import org.springframework.stereotype.Service;
 import com.xinduswishlistmanagement.Model.Users;
 import com.xinduswishlistmanagement.Repository.UserRepository;
 
+// Custom UserDetailsService implementation
 @Service
 public class CustomUserDetailService implements UserDetailsService{
-	
+
 	@Autowired
 	private UserRepository userRepository;
 
+	// Load user details by username (email)
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Users users = userRepository.findByEmail(username).orElseThrow(() -> new RuntimeException("user not found!"));
+		// Find user by email in the repository
+		Users users = userRepository.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException("User not found!"));
 		return users;
 	}
 
